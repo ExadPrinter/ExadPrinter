@@ -33,7 +33,7 @@ Below is a description of the key classes:
 
 ### [`data_analysis_scripts`](data_analysis_scripts)
 
-This directory contains the source code used for preprocessing the dataset and detecting access channels leaking eight different types of identifiers: **Emails, Emergency phone numbers, Emergency contact names, MAC addresses, Serial numbers, IMEI, ICCID, and IMSI**.
+This directory contains the source code used for preprocessing the dataset and computing fingerprint uniqueness and stability.
 
 - [`data_preparation_pipeline.ipynb`](data_analysis_scripts/data_preparation_pipeline.ipynb):  
   A Jupyter notebook implementing the preprocessing pipeline. It iterates over all collected fingerprints stored in archive files, extracts the `data.json` content, and parses it using the [`fingerprint_parser`](data_analysis_scripts/fingerprint_parser) module.
@@ -49,6 +49,10 @@ This directory contains the source code used for preprocessing the dataset and d
   A Jupyter notebook implementing the attribute cleaning logic. It removes constant, redundant, and unstable attributes to generate two cleaned attribute sets:  
   - `top_cleaned_stable_attribute_entropies.csv`: Contains attributes with entropy > 0.5 that are stable on at least one device.  
   - `top_cleaned_all_stable_attribute_entropies.csv`: Contains attributes that are stable across all devices and have high entropy.
+
+- [`fingerprint_uniqueness_pipeline.ipynb`](data_analysis_scripts/fingerprint_uniqueness_pipeline.ipynb):  
+  A Jupyter notebook that computes fingerprint uniqueness using the two cleaned attribute sets. It selects the best attribute combinations that maximize uniqueness and visualizes the results.
+
 
 ### 📝 Notes
 
