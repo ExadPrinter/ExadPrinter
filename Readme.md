@@ -45,6 +45,10 @@ This directory contains the source code used for preprocessing the dataset and d
 
   The parsed output for each fingerprint is saved as a JSON file inside the `PREPARE_DIR` directory.
 
+- [`data_cleanning_pipeline.ipynb`](data_analysis_scripts/data_cleanning_pipeline.ipynb):  
+  A Jupyter notebook implementing the attribute cleaning logic. It removes constant, redundant, and unstable attributes to generate two cleaned attribute sets:  
+  - `top_cleaned_stable_attribute_entropies.csv`: Contains attributes with entropy > 0.5 that are stable on at least one device.  
+  - `top_cleaned_all_stable_attribute_entropies.csv`: Contains attributes that are stable across all devices and have high entropy.
 
 ### 📝 Notes
 
